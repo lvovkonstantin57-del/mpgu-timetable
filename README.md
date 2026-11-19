@@ -1,12 +1,60 @@
-# Расписание МПГУ — самостоятельное приложение
+<div align="center">
 
-Приложение с расписанием пар, напоминаниями, объявлениями старост и отметкой на паре. Работает без Telegram: регистрация, вход и уведомления — внутри приложения. Есть версии для Android (APK), iPhone (IPA) и браузера.
+# 📅 Расписание МПГУ
+
+**Приложение с расписанием пар для студентов, старост и преподавателей МПГУ**
+
+[![Сайт](https://img.shields.io/badge/сайт-mpgu--timetable.ru-2ea44f?style=flat-square)](https://mpgu-timetable.ru)
+[![Тесты сервера](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/server-tests.yml/badge.svg)](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/server-tests.yml)
+[![Сборка APK и IPA](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/build-apps.yml/badge.svg)](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/build-apps.yml)
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=flat-square&logo=capacitor&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Caddy](https://img.shields.io/badge/Caddy-1F88C0?style=flat-square&logo=caddy&logoColor=white)
+
+</div>
+
+Расписание пар, напоминания, объявления старост и отметка посещаемости по коду — в одном приложении. Работает без Telegram: регистрация, вход и уведомления внутри приложения. Есть версии для **Android (APK)**, **iPhone (IPA)** и **браузера**.
+
+## ✨ Возможности
+
+- **Расписание** с чётными/нечётными неделями, диапазонами (`1-8`, `2/3`), переносами, отменами и заменами аудиторий
+- **Роли:** студент, староста, преподаватель, админ и главный админ — у каждого своя вкладка
+- **Вход в группу по коду:** личный код студента или код группы от старосты
+- **Посещаемость:** преподаватель показывает код на паре, студенты отмечаются в приложении; журнал и выгрузка в Excel
+- **Уведомления:** напоминания о парах, объявления старост, лента событий
+- **Импорт из xlsx** — расписание и списки групп одним файлом
+- **Открытые страницы `/raspisanie/<группа>`** без JavaScript — их видят Яндекс и Google
+- **Установка сервера одной командой**, HTTPS через Caddy, бэкапы
+
+## 🧱 Устройство
 
 ```
-server/   сервер: FastAPI + SQLite, API и веб-версия приложения
-mobile/   приложение для Android и iOS (Capacitor) — тот же интерфейс, что в браузере
-.github/  сборка APK и IPA в GitHub Actions, тесты сервера
+server/   FastAPI + SQLite: API и веб-версия приложения
+mobile/   Android и iOS на Capacitor — тот же интерфейс, что в браузере
+.github/  GitHub Actions: тесты сервера, сборка APK и IPA
 ```
+
+## 🚀 Быстрый старт
+
+```bash
+# сервер на VPS (Ubuntu/Debian, под root)
+curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/mpgu-timetable/main/install.sh | bash
+
+# локальная разработка
+cd server && python -m venv .venv && . .venv/bin/activate
+pip install -r requirements-dev.txt && pytest
+OWNER_CODE=test python -m app      # http://localhost:8000
+```
+
+## 📖 Документация
+
+[Коды и вход](#как-люди-попадают-в-приложение-коды) · [Роли](#роли) · [Расписание](#расписание) · [Посещаемость](#посещаемость) · [Уведомления](#уведомления) · [Открытые страницы](#расписание-без-входа-и-поисковики) · [Сервер](#сервер) · [Телефон](#приложение-на-телефоне) · [Формат xlsx](#формат-xlsx) · [Разработка](#разработка)
+
+---
 
 ## Как люди попадают в приложение: коды
 
@@ -287,3 +335,7 @@ pip install -r requirements-dev.txt
 pytest
 OWNER_CODE=test python -m app          # http://localhost:8000
 ```
+
+---
+
+<sub>Автор — [Константин Львов](https://github.com/lvovkonstantin57-del) · [Telegram](https://t.me/l1ttleStich)</sub>
