@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Сервер «Расписание МПГУ» на VPS одной командой. Ubuntu или Debian, под root:
 #
-#   curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/-/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/mpgu-timetable/main/install.sh | bash
 #
 # Что делает: ставит Docker (если его нет), скачивает код в /opt/raspisanie, создаёт server/.env
 # с адресом https://<IP-через-дефисы>.sslip.io и кодом главного админа, запускает сервер и
@@ -29,7 +29,7 @@
 
 set -euo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/lvovkonstantin57-del/-.git}"
+REPO_URL="${REPO_URL:-https://github.com/lvovkonstantin57-del/mpgu-timetable.git}"
 BRANCH="${BRANCH:-main}"
 DIR="${INSTALL_DIR:-/opt/raspisanie}"
 PROJECT=raspisanie   # имя проекта в server/docker-compose.yml
