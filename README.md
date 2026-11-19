@@ -1,25 +1,24 @@
+<p align="center"><img src=".github/banner.svg" alt="Расписание МПГУ" width="100%"></p>
+
 <div align="center">
-
-# 📅 Расписание МПГУ
-
-**Приложение с расписанием пар для студентов, старост и преподавателей МПГУ**
 
 [![Сайт](https://img.shields.io/badge/сайт-mpgu--timetable.ru-2ea44f?style=flat-square)](https://mpgu-timetable.ru)
 [![Тесты сервера](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/server-tests.yml/badge.svg)](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/server-tests.yml)
 [![Сборка APK и IPA](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/build-apps.yml/badge.svg)](https://github.com/lvovkonstantin57-del/mpgu-timetable/actions/workflows/build-apps.yml)
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=flat-square&logo=capacitor&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Caddy](https://img.shields.io/badge/Caddy-1F88C0?style=flat-square&logo=caddy&logoColor=white)
-
 </div>
 
 Расписание пар, напоминания, объявления старост и отметка посещаемости по коду — в одном приложении. Работает без Telegram: регистрация, вход и уведомления внутри приложения. Есть версии для **Android (APK)**, **iPhone (IPA)** и **браузера**.
 
-## ✨ Возможности
+| | |
+|---|---|
+| **Категория** | Образование |
+| **Платформы** | Android (APK) · iPhone (IPA) · браузер |
+| **Сайт** | [mpgu-timetable.ru](https://mpgu-timetable.ru) |
+| **Стек** | FastAPI · SQLite · Capacitor · Docker · Caddy |
+| **Разработчик** | [Константин Львов](https://github.com/lvovkonstantin57-del) |
+
+## ⭐ Что внутри
 
 - **Расписание** с чётными/нечётными неделями, диапазонами (`1-8`, `2/3`), переносами, отменами и заменами аудиторий
 - **Роли:** студент, староста, преподаватель, админ и главный админ — у каждого своя вкладка
@@ -30,7 +29,7 @@
 - **Открытые страницы `/raspisanie/<группа>`** без JavaScript — их видят Яндекс и Google
 - **Установка сервера одной командой**, HTTPS через Caddy, бэкапы
 
-## 🧱 Устройство
+## 🧩 Устройство
 
 ```
 server/   FastAPI + SQLite: API и веб-версия приложения
@@ -38,7 +37,7 @@ mobile/   Android и iOS на Capacitor — тот же интерфейс, чт
 .github/  GitHub Actions: тесты сервера, сборка APK и IPA
 ```
 
-## 🚀 Быстрый старт
+## ⬇️ Установка
 
 ```bash
 # сервер на VPS (Ubuntu/Debian, под root)
