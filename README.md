@@ -111,7 +111,7 @@ mobile/   приложение для Android и iOS (Capacitor) — тот же
 На VPS с Ubuntu или Debian под root:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/-/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/mpgu-timetable/main/install.sh | bash
 ```
 
 Скрипт ставит Docker, скачивает код в `/opt/raspisanie`, создаёт `server/.env` с адресом `https://<IP-через-дефисы>.sslip.io` и кодом главного админа, запускает сервер и в конце печатает адрес и код. HTTPS-сертификат получает Caddy. Нужно, чтобы у хостинга были открыты входящие порты 80 и 443.
@@ -158,7 +158,7 @@ schedule.example.ru {
 ### Обновление и бэкап
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/-/main/install.sh | bash   # если ставил скриптом
+curl -fsSL https://raw.githubusercontent.com/lvovkonstantin57-del/mpgu-timetable/main/install.sh | bash   # если ставил скриптом
 git pull && docker compose --profile caddy up -d --build                                       # если вручную
 ```
 
